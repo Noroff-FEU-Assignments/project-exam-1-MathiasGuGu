@@ -1,0 +1,13 @@
+@import url('./utilities/colors.css');
+@import url('./utilities/components.css');
+@import url('./utilities/footer.css');
+@import url('./utilities/navbar.css');
+
+.about-container {
+	width: 100vw;
+	height: calc(100vh - 65px);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}

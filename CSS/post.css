@@ -1,0 +1,51 @@
+@import url('./utilities/colors.css');
+@import url('./utilities/components.css');
+@import url('./utilities/footer.css');
+@import url('./utilities/navbar.css');
+
+.header-image-container {
+	height: 500px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 25px;
+}
+
+.header-image-container > img {
+	width: 80%;
+	height: 100%;
+	max-width: 1000px;
+
+	border-radius: 6px;
+
+	object-fit: cover;
+}
+
+.post-text {
+	height: auto;
+	width: 80%;
+	max-width: 1000px;
+	color: black;
+	font-size: larger;
+	font-weight: 300;
+
+	padding-inline: 50px;
+}
+
+.post-text-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+	.header-image-container > img {
+		width: 100%;
+	}
+
+	.post-text {
+		width: 100%;
+	}
+}

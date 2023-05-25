@@ -1,0 +1,136 @@
+@import url('./utilities/colors.css');
+@import url('./utilities/components.css');
+@import url('./utilities/footer.css');
+@import url('./utilities/navbar.css');
+
+.hero-container {
+	height: 400px;
+	width: 100%;
+}
+
+.hero-image {
+	width: 100%;
+	height: 100%;
+	background-image: url('https://images.unsplash.com/photo-1532540983331-3260f8487880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGFydHxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60');
+	background-size: cover;
+}
+
+.hero-fader {
+	width: 100%;
+	height: 100%;
+	background: rgb(75, 179, 196);
+	background: linear-gradient(
+		180deg,
+		rgba(75, 179, 196, 0) 70%,
+		rgba(255, 255, 255, 1) 90%
+	);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#hero-search-form {
+	width: 50%;
+	height: 50%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.hero-search-container {
+	width: 100%;
+	height: 50%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hero-search-container > input {
+	width: 90%;
+	height: 50%;
+	box-shadow: 1px 1px 10px 1px #00000010;
+	border: none;
+	border-radius: 6px;
+}
+
+.hero-buttons-container {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: start;
+	gap: 1rem;
+	padding: 50px;
+}
+
+.hero-buttons-container > button {
+	padding-inline: 2rem;
+	padding-block: 0.5rem;
+
+	background-color: white;
+	border: none;
+	border-radius: 6px;
+	background-color: var(--main-blue);
+	color: var(--text-blue);
+	transition: all 0.2s linear;
+}
+.hero-buttons-container > button:hover {
+	transition: all 0.2s linear;
+	cursor: pointer;
+	scale: 1.1;
+}
+
+.posts-container {
+	height: auto;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.posts {
+	max-width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	gap: 2rem;
+
+	margin-bottom: 200px;
+}
+
+.post-card {
+	width: calc(100% / 3 - 25px);
+	min-width: calc(300px);
+	flex-grow: 1;
+	height: 500px;
+}
+
+.post-card-image {
+	height: 50%;
+	max-width: 100%;
+	width: 100%;
+	background-size: contain;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+
+	object-fit: cover;
+}
+
+.post-card-text {
+	overflow: hidden;
+	height: 30%;
+	max-width: 100%;
+}
+
+.post-card-text > h2 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 100%;
+}
+
+.post-button {
+	margin-top: 50px;
+}
