@@ -35,7 +35,6 @@ const fetchHeroPost = async () => {
     `;
 
 	hero.innerHTML = HTML;
-	console.log(data);
 };
 
 const populateCarousel = async () => {
@@ -49,7 +48,6 @@ const populateCarousel = async () => {
 		loader?.remove();
 	}
 	for (let post in data) {
-		console.log(data[post]);
 		const HTML = `
         <div class="post-card">
                     <img src="${urlFor(
@@ -71,8 +69,6 @@ const populateCarousel = async () => {
 `;
 		carousel.innerHTML += HTML;
 	}
-
-	console.log(data);
 };
 
 populateCarousel();

@@ -2,7 +2,6 @@ const INPUTS = Array.from(document.querySelectorAll('input'));
 const textArea = document.querySelectorAll('textarea');
 const formButton = document.querySelector('#form-button');
 const form = document.querySelector('form');
-console.log(formButton);
 let checkList = [...INPUTS, ...textArea];
 
 const checkInput = (text, id) => {

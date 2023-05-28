@@ -14,8 +14,6 @@ document.title = slug.replace('-', ' ');
 const data = await client.fetch(
 	`*[_type == "post" && slug.current == "${slug}"]`
 );
-console.log(data[0]);
-console.log(data[0].mainImage.asset._ref);
 
 const _ref = data[0]._id;
 
@@ -39,11 +37,7 @@ const subscription = await client
 		comments.appendChild(div);
 	});
 
-const fetchSinglePost = async (slug) => {
-	const data = await client.fetch(
-		`*[_type == "post" && slug.current == "${slug}"]`
-	);
-
+const fetchSinglePost = async () => {
 	if (data !== undefined) {
 		const loader = document.querySelector('.loader');
 		loader?.remove();

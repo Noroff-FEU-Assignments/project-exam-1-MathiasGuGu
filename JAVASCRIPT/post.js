@@ -57,10 +57,4 @@ MOREBTN?.addEventListener('click', async () => {
 	window.scrollTo(0, currentY);
 });
 
-const fetchPostComments = async () => {
-	const data = client.fetch(
-		"*[_type == 'comment' && _ref == post._id && approved == true]"
-	);
-};
-
 fetchAllPosts();
