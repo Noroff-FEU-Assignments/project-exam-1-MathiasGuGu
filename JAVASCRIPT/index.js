@@ -41,10 +41,13 @@ const fetchHeroPost = async () => {
 const populateCarousel = async () => {
 	const data = await client.fetch(
 		`
-        *[_type == "post"]
+        *[_type == "post"][0...6]
     `
 	);
-
+	if (data !== undefined) {
+		const loader = document.querySelector('.loader');
+		loader?.remove();
+	}
 	for (let post in data) {
 		console.log(data[post]);
 		const HTML = `

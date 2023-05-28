@@ -134,3 +134,38 @@
 .post-button {
 	margin-top: 50px;
 }
+
+.posts-alt-container {
+	width: 100%;
+	height: auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 2rem;
+}
+
+.more-posts-btn {
+	width: 30%;
+	background-color: var(--main-blue);
+	color: var(--text-blue);
+	padding: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: all 0.2s linear;
+}
+.more-posts-btn:hover {
+	scale: 1.02;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+
+@media screen and (max-width: 640px) {
+	.more-posts-btn {
+		width: 80%;
+	}
+}

@@ -1,6 +1,7 @@
 import client from './shared/builder.js';
 import builder from './shared/urlMaker.js';
 
+const MOREBTN = document.querySelector('.more-posts-btn');
 const ALLPOSTS = document.querySelector('.posts');
 
 /* *[_type == "comment" && _ref == post._id && approved == true] */
@@ -8,8 +9,10 @@ const ALLPOSTS = document.querySelector('.posts');
 
 const urlFor = (source) => builder.image(source);
 
+let numberOfPosts = 9;
+
 const fetchAllPosts = async () => {
-	const data = await client.fetch("*[_type == 'post']");
+	const data = await client.fetch(`*[_type == 'post'][0...${numberOfPosts}]`);
 
 	if (data !== undefined) {
 		const loader = document.querySelector('.loader');
@@ -17,7 +20,6 @@ const fetchAllPosts = async () => {
 	}
 
 	for (let post in data) {
-		console.log(data);
 		let post_html = `
 		<div class="post-card">
 					<img src="${urlFor(data[post].mainImage.asset._ref)}
@@ -40,6 +42,20 @@ const fetchAllPosts = async () => {
 		ALLPOSTS.innerHTML += post_html;
 	}
 };
+
+const clearPosts = () => {
+	ALLPOSTS.innerHTML = '';
+};
+
+MOREBTN?.addEventListener('click', async () => {
+	const currentY = window.scrollY;
+
+	numberOfPosts += 9;
+	clearPosts();
+	await fetchAllPosts();
+
+	window.scrollTo(0, currentY);
+});
 
 const fetchPostComments = async () => {
 	const data = client.fetch(

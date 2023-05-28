@@ -11,3 +11,71 @@
 	align-items: center;
 	justify-content: space-evenly;
 }
+
+.weekly-art {
+	width: 50%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	left: 0;
+}
+
+.weekly-art > img {
+	object-fit: cover;
+	width: 90%;
+	height: 90%;
+}
+
+.text-container {
+	right: 0%;
+	position: absolute;
+	width: 65%;
+	height: 80%;
+	height: auto;
+	min-height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.text-container > h1 {
+	font-size: 4rem;
+	font-weight: bolder;
+	color: transparent;
+	background-size: contain;
+	background-clip: text;
+	background-image: url('https://images.unsplash.com/photo-1563305123-1548e19a200e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');
+	mix-blend-mode: multiply;
+	text-align: center;
+}
+
+.text-container > p {
+	padding-left: 25%;
+	padding-right: 30px;
+	width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+	.text-container {
+		width: 100%;
+		margin-top: 200px;
+		height: auto;
+	}
+	.text-container > p {
+		padding-left: 0%;
+		padding-right: 0%;
+		padding-inline: 25px;
+		width: 100%;
+	}
+	.text-container > h1 {
+		font-weight: bold;
+		font-size: 3rem;
+	}
+	.weekly-art {
+		display: none;
+	}
+}

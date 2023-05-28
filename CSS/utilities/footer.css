@@ -1,5 +1,29 @@
 footer {
-	height: 500px;
+	height: 400px;
 	width: 100vw;
 	background-color: var(--main-blue);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.footer-logo {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.footer-bottom > * {
+	color: var(--text-blue);
+}
+
+.footer-name {
+	color: var(--text-blue);
 }

@@ -77,23 +77,105 @@
 }
 
 .hamburger-container {
-	height: 80%;
+	height: 70%;
 	aspect-ratio: 1 / 1;
-
-	border: 1px solid black;
 
 	display: none;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
+	z-index: 100;
 }
 
+.hamburger-container:hover {
+	cursor: pointer;
+}
+
+.hamburger-container[data-state='open'] > .bar:nth-child(n + 1) {
+	width: 80%;
+	transition: all 0.3s ease-in;
+}
+.hamburger-container[data-state='open'] > .bar:nth-child(n + 2) {
+	width: 60%;
+	transition: all 0.3s ease-in;
+}
+.hamburger-container[data-state='open'] > .bar:nth-child(n + 3) {
+	width: 30%;
+	transition: all 0.3s ease-in;
+}
 .bar {
+	z-index: 100;
+
 	width: 80%;
 	height: 2px;
-	background-color: black;
+	background-color: var(--title-gray);
 
 	border-radius: 2px;
+	transition: all 0.3s ease-in;
+}
+
+.navbar-modal[data-state='open'] {
+	top: 0%;
+	right: 0%;
+	width: 80%;
+	max-width: 400px;
+	height: 100vh;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+
+	transition: right 0.1s linear;
+}
+
+.navbar-modal > ul {
+	height: 60%;
+	width: 100%;
+
+	padding: 0%;
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+}
+
+.navbar-modal > ul > li {
+	width: 100%;
+	height: 70px;
+}
+.navbar-modal > ul > li > a {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding-inline: 20px;
+}
+.navbar-modal > ul > li > a:hover {
+	background-color: #00000020;
+}
+.navbar-modal[data-state='closed'] {
+	opacity: 0;
+	top: 0%;
+	right: -100%;
+	width: 80%;
+	height: 100vh;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	transition: right 0.1s linear;
+}
+.navbar-backdrop[data-state='open'] {
+	top: 0%;
+	right: 0%;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	background-color: #00000020;
 }
 
 @media screen and (max-width: 1200px) {
@@ -103,6 +185,9 @@
 }
 
 @media screen and (max-width: 1000px) {
+	.navbar-container {
+		justify-content: space-between;
+	}
 	.navbar-list {
 		display: none;
 	}
@@ -110,9 +195,12 @@
 		display: none;
 	}
 	.navbar-logo {
-		width: 300px;
+		width: 100px;
 	}
 	.user-image {
 		display: none;
+	}
+	.hamburger-container {
+		display: flex;
 	}
 }
