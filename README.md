@@ -33,8 +33,6 @@ cd project-exam-1-MathiasGuGu
 
 ▶️ Running the App
 
-Since this is a plain HTML/CSS/JavaScript project, there's no need to install dependencies or run a build tool.
-
 To run the app:
 
     Open the index.html file in your browser
